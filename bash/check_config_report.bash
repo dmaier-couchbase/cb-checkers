@@ -39,7 +39,7 @@ then
    echo "Use: $0 <host> <bucket> <pwd>"
 else
 	echo '<html>'
-	echo '<h1> Configuration Report </h1>'
+	echo "<h1> Configuration Report - $HOSTNAME</h1>"
 	
 	#Checks: please modify the expected numbers regarding your expectations!
 	# Is the expiry pager enabled or disabled?

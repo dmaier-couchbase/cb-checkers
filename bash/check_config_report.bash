@@ -42,11 +42,25 @@ else
 	echo '<h1> Configuration Report </h1>'
 	
 	#Checks: please modify the expected numbers regarding your expectations!
+	# Is the expiry pager enabled or disabled?
 	check ep_exp_pager_stime 0
+
+	# Is the access log scanner enabled or disabled?
 	check access_scanner_enabled false
+
+	# What's the access log scanner path?
+        check ep_alog_path /opt/couchbase/var/lib/couchbase/data/graph/access.log	
+
+	# What's the expiration via compaction threshold?
 	check compaction_exp_mem_threshold 0
+
+	# What's the number of writer threads?	
 	check ep_max_num_writers 8
+
+	# What's the number of partitions the threads are assigned to?
 	check ep_max_num_shards 8
+
+	# What's the number or reader threads?
 	check ep_max_num_readers 8
 fi
 

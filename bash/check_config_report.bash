@@ -46,10 +46,10 @@ else
 	check ep_exp_pager_stime 0
 
 	# Is the access log scanner enabled or disabled?
-	check access_scanner_enabled false
+	check access_scanner_enabled 0
 
 	# What's the access log scanner path?
-        check ep_alog_path /opt/couchbase/var/lib/couchbase/data/graph/access.log	
+        check ep_alog_path /opt/couchbase/var/lib/couchbase/data/${BUCKET}/access.log	
 
 	# What's the expiration via compaction threshold?
 	check compaction_exp_mem_threshold 0

@@ -62,6 +62,9 @@ else
 
 	# What's the number or reader threads?
 	check ep_max_num_readers 8
+	
+	# What's the number of nonio threads
+	check max_num_nonio 8
 fi
 
 echo '</html>'

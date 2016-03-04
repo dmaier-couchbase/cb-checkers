@@ -4,14 +4,14 @@ export PATH=$CB_BIN:$PATH
 
 HOST=$1
 BUCKET=$2
-PWD=$3
+BUCKET_PWD=$3
 
 echo '<html>'
 
 # Arguments
 echo "host = $HOST <br/>"
 echo "bucket = $BUCKET <br/>"
-echo "pwd = $PWD <br/>"
+echo "pwd = $BUCKET_PWD <br/>"
 echo '<hr/>'
 
 # Check
@@ -20,7 +20,7 @@ function check {
    METRIC=$1
    EXPECTED=$2
 
-   VAL=`cbstats $HOST:11210 -b $BUCKET -p $PWD all | grep $METRIC | sed "s/ //g" | cut -d':' -f2`
+   VAL=`cbstats $HOST:11210 -b $BUCKET -p $BUCKET_PWD all | grep $METRIC | sed "s/ //g" | cut -d':' -f2`
 
    COLOR=red
    if [ "$VAL" = "$EXPECTED" ]
@@ -34,7 +34,7 @@ function check {
 
 
 
-if [ "${HOST}null" = "null" ] || [ "${BUCKET}null" = "null" ] || [ "${PWD}null" = "null" ]
+if [ "${HOST}null" = "null" ] || [ "${BUCKET}null" = "null" ] || [ "${BUCKET_PWD}null" = "null" ]
 then
    echo "Use: $0 <host> <bucket> <pwd>"
 else

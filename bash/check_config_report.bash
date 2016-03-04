@@ -61,7 +61,7 @@ else
 	check ep_max_num_shards 8
 	
 	# What's the number of nonio threads
-	check max_num_nonio 8
+	check max_num_nonio 12
 fi
 
 echo '</html>'
